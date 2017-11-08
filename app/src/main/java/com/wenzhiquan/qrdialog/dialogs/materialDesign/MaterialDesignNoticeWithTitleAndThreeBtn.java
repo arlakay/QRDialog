@@ -12,7 +12,7 @@ import org.json.JSONException;
  * Created by wenzhiquan on 17-11-8.
  */
 
-public class MaterialDesignNoticeWithTitleAndTwoBtns extends QRTextDialog {
+public class MaterialDesignNoticeWithTitleAndThreeBtn extends QRTextDialog {
     @Override
     public void initComponents(Bundle savedInstanceState) {
         super.initComponents(savedInstanceState);
@@ -23,6 +23,8 @@ public class MaterialDesignNoticeWithTitleAndTwoBtns extends QRTextDialog {
             paramsJson.put(TAG_POSITIVE_BUTTON_COLOR, getResolvedColor(R.color.dialogBlue));
             paramsJson.put(TAG_NEGATIVE_BUTTON, R.string.cancel);
             paramsJson.put(TAG_NEGATIVE_BUTTON_COLOR, getResolvedColor(R.color.dialogGrey));
+            paramsJson.put(TAG_NEUTRAL_BUTTON, R.string.neutral);
+            paramsJson.put(TAG_NEUTRAL_BUTTON_COLOR, getResolvedColor(R.color.dialogGreen));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -37,6 +39,10 @@ public class MaterialDesignNoticeWithTitleAndTwoBtns extends QRTextDialog {
         setNegativeOnclickListener(dialog -> {
             dismiss();
             Toast.makeText(getActivity(), R.string.cancel, Toast.LENGTH_SHORT).show();
+        });
+        setNeutralOnclickListener(dialog -> {
+            dismiss();
+            Toast.makeText(getActivity(), R.string.neutral, Toast.LENGTH_SHORT).show();
         });
     }
 }

@@ -16,18 +16,4 @@
         android:textColor="@color/colorTextTitle"
         android:textCursorDrawable="@null"
         android:textSize="@dimen/alert_label_input_edit_text_size" />
-
-    <TextView
-        android:id="@+id/alert_input_error"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/alert_label_input_label_margin_vertical"
-        android:layout_marginEnd="@dimen/alert_label_input_label_margin_horizontal"
-        android:layout_marginStart="@dimen/alert_label_input_label_margin_horizontal"
-        android:layout_marginTop="@dimen/alert_label_invalid_margin_top"
-        android:labelFor="@+id/alert_input"
-        android:text="@string/dialog_invalid"
-        android:textColor="@color/dangerColor"
-        android:textSize="@dimen/alert_label_invalid_text_size"
-        android:visibility="gone" />
 </LinearLayout>

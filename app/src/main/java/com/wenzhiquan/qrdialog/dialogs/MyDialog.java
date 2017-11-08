@@ -3,10 +3,12 @@ package com.wenzhiquan.qrdialog.dialogs;
 import android.util.Log;
 
 import com.wenzhiquan.qrdialog.MainActivity;
+import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignInputWithTitleAndTwoBtn;
 import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNotice;
 import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNoticeWithTitle;
-import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNoticeWithTitleAndThreeBtns;
-import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNoticeWithTitleAndTwoBtns;
+import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNoticeWithTitleAndThreeBtn;
+import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignNoticeWithTitleAndTwoBtn;
+import com.wenzhiquan.qrdialog.dialogs.materialDesign.MaterialDesignPasswordWithTitleAndTwoBtn;
 
 /**
  * Created by wenzhiquan on 2017/11/7.
@@ -18,6 +20,8 @@ public class MyDialog {
     public static final String MATERIAL_DESIGN_NOTICE_WITH_TITLE = "Material Design Notice With Title";
     public static final String MATERIAL_DESIGN_NOTICE_WITH_TITLE_TWO_BTN = "Material Design Notice With Title And Two Btn";
     public static final String MATERIAL_DESIGN_NOTICE_WITH_TITLE_THREE_BTN = "Material Design Notice With Title And Three Btn";
+    public static final String MATERIAL_DESIGN_INPUT_WITH_TITLE_TWO_BTN = "Material Design Input With Title And Two Btn";
+    public static final String MATERIAL_DESIGN_PASSWORD_WITH_TITLE_TWO_BTN = "Material Design Password With Title And Two Btn";
 
     private MainActivity activity;
 
@@ -51,12 +55,20 @@ public class MyDialog {
                 materialDesignNoticeWithTitle.show(activity);
                 break;
             case MATERIAL_DESIGN_NOTICE_WITH_TITLE_TWO_BTN:
-                MaterialDesignNoticeWithTitleAndTwoBtns materialDesignNoticeWithTitleAndTwoBtns = new MaterialDesignNoticeWithTitleAndTwoBtns();
-                materialDesignNoticeWithTitleAndTwoBtns.show(activity);
+                MaterialDesignNoticeWithTitleAndTwoBtn materialDesignNoticeWithTitleAndTwoBtn = new MaterialDesignNoticeWithTitleAndTwoBtn();
+                materialDesignNoticeWithTitleAndTwoBtn.show(activity);
                 break;
             case MATERIAL_DESIGN_NOTICE_WITH_TITLE_THREE_BTN:
-                MaterialDesignNoticeWithTitleAndThreeBtns materialDesignNoticeWithTitleAndThreeBtns = new MaterialDesignNoticeWithTitleAndThreeBtns();
-                materialDesignNoticeWithTitleAndThreeBtns.show(activity);
+                MaterialDesignNoticeWithTitleAndThreeBtn materialDesignNoticeWithTitleAndThreeBtn = new MaterialDesignNoticeWithTitleAndThreeBtn();
+                materialDesignNoticeWithTitleAndThreeBtn.show(activity);
+                break;
+            case MATERIAL_DESIGN_INPUT_WITH_TITLE_TWO_BTN:
+                MaterialDesignInputWithTitleAndTwoBtn materialDesignInputWithTitleAndTwoBtn = new MaterialDesignInputWithTitleAndTwoBtn();
+                materialDesignInputWithTitleAndTwoBtn.show(activity);
+                break;
+            case MATERIAL_DESIGN_PASSWORD_WITH_TITLE_TWO_BTN:
+                MaterialDesignPasswordWithTitleAndTwoBtn materialDesignPasswordWithTitleAndTwoBtn = new MaterialDesignPasswordWithTitleAndTwoBtn();
+                materialDesignPasswordWithTitleAndTwoBtn.show(activity);
                 break;
         }
     }

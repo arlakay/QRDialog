@@ -3,8 +3,10 @@
     <string name="dialog_title">Title</string>
     <string name="dialog_content">contents</string>
     <string name="dialog_placeholder">Please enter text here.</string>
+    <string name="dialog_password_placeholder">Please enter password here.</string>
     <string name="dialog_invalid">Input is invalid.</string>
     <string name="dialog_notice">This is a notice. If you just want to give users a notice or alert, you can use this.</string>
+    <string name="dialog_password">This file is protected by password, please enter password first.</string>
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
