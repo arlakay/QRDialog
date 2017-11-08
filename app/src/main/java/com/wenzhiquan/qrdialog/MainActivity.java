@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.wenzhiquan.qrdialog.dialogs.MyDialog;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.wenzhiquan.qrdialog.dialogs.MyDialog.MATERIAL_DESIGN_NOTICE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         if (dialogList == null) {
             dialogList = new ArrayList<>();
         }
-        dialogList.add(new MyDialog("Material Design Default"));
+        MyDialog myDialog = new MyDialog(MATERIAL_DESIGN_NOTICE);
+        myDialog.setActivity(this);
+        dialogList.add(myDialog);
     }
 }

@@ -12,4 +12,9 @@
     <color name="success_color">#00b19d</color>
     <color name="info_color">#4285f4</color>
     <color name="warning_color">#f4b142</color>
+
+    <color name="dialog_blue">#00bcd4</color>
+
+    <color name="colorTextTitle">@android:color/black</color>
+    <color name="colorLabelTitle">#7F7F7F</color>
 </resources>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">QRDialog</string>
+    <string name="dialog_content">contents</string>
+    <string name="dialog_placeholder">Please enter text here.</string>
+    <string name="dialog_invalid">Input is invalid.</string>
+    <string name="dialog_notice">This is a notice. If you just want to give users a notice or alert, you can use this.</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="neutral">Neutral</string>
+    <string name="confirm">Confirm</string>
 </resources>
