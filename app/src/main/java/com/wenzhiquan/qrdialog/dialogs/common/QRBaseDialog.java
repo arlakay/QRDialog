@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.wenzhiquan.qrdialog.R;
@@ -67,21 +66,21 @@ public abstract class QRBaseDialog extends DialogFragment {
             builder.setTitle(titleId);
         }
 
-        boolean canCancel = paramsJson.optBoolean(TAG_IS_CANCELABLE);
-        boolean autoDismiss = paramsJson.optBoolean(TAG_AUTO_DISMISS);
+        canCancel = paramsJson.optBoolean(TAG_IS_CANCELABLE);
+        autoDismiss = paramsJson.optBoolean(TAG_AUTO_DISMISS);
 
         int positiveButtonId = paramsJson.optInt(TAG_POSITIVE_BUTTON);
         int negativeButtonId = paramsJson.optInt(TAG_NEGATIVE_BUTTON);
         int neutralButtonId = paramsJson.optInt(TAG_NEUTRAL_BUTTON);
 
         if (positiveButtonId != 0) {
-            builder.setPositiveButton(getResourceString(positiveButtonId), null);
-        }
-        if (negativeButtonId != 0) {
-            builder.setNegativeButton(getResourceString(negativeButtonId), null);
+            builder.setPositiveButton(positiveButtonId, null);
         }
         if (neutralButtonId != 0) {
-            builder.setNeutralButton(getResourceString(neutralButtonId), null);
+            builder.setNeutralButton(neutralButtonId, null);
+        }
+        if (negativeButtonId != 0) {
+            builder.setNegativeButton(negativeButtonId, null);
         }
     }
 
@@ -96,10 +95,6 @@ public abstract class QRBaseDialog extends DialogFragment {
         initComponents(savedInstanceState);
         initDialog(savedInstanceState);
         dialog = builder.create();
-
-        if (showKeyBoard() && dialog.getWindow() != null) {
-            dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-        }
 
         rewriteShowListener(dialog, savedInstanceState);
 
@@ -119,19 +114,18 @@ public abstract class QRBaseDialog extends DialogFragment {
             }
             bindListenerAndRecoverStatus(savedInstanceState);
             if (null != negativeListener) {
-                setNegativeButton(dialog);
+                setNegativeButton();
             }
             if (null != positiveListener) {
-                setPositiveButton(dialog);
+                setPositiveButton();
             }
             if (null != neutralListener) {
-                setNeutralButton(dialog);
+                setNeutralButton();
             }
         });
     }
 
-    public void setPositiveButton(AlertDialog dialog) {
-        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+    public void setPositiveButton() {
         if (positiveButton != null && positiveListener != null) {
             positiveButton.setOnClickListener(positiveListener);
         }
@@ -141,8 +135,7 @@ public abstract class QRBaseDialog extends DialogFragment {
         }
     }
 
-    public void setNegativeButton(AlertDialog dialog) {
-        Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+    public void setNegativeButton() {
         if (negativeButton != null && negativeListener != null) {
             negativeButton.setOnClickListener(negativeListener);
         }
@@ -152,8 +145,7 @@ public abstract class QRBaseDialog extends DialogFragment {
         }
     }
 
-    public void setNeutralButton(AlertDialog dialog) {
-        Button neutralButton = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);
+    public void setNeutralButton() {
         if (neutralButton != null && neutralListener != null) {
             neutralButton.setOnClickListener(neutralListener);
         }
@@ -175,10 +167,6 @@ public abstract class QRBaseDialog extends DialogFragment {
         this.neutralListener = listener;
     }
 
-    public boolean showKeyBoard() {
-        return false;
-    }
-
     /**
      * This function transfer the string resource to string characters
      *
@@ -191,17 +179,5 @@ public abstract class QRBaseDialog extends DialogFragment {
 
     public int getResolvedColor(int color) {
         return ContextCompat.getColor(getContext(), color);
-    }
-
-    public Button getPositiveButton() {
-        return positiveButton;
-    }
-
-    public Button getNegativeButton() {
-        return negativeButton;
-    }
-
-    public Button getNeutralButton() {
-        return neutralButton;
     }
 }

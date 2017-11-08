@@ -13,6 +13,6 @@
         android:layout_marginStart="@dimen/alert_label_input_label_margin_horizontal"
         android:layout_marginTop="@dimen/alert_label_input_label_margin_vertical"
         android:text="@string/dialog_content"
-        android:textColor="@color/colorTextTitle"
+        android:textColor="@color/colorLabel"
         android:textSize="@dimen/alert_label_input_label_text_size" />
 </LinearLayout>

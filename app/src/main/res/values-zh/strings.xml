@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">全儿的Dialog</string>
+    <string name="app_name">QRDialog</string>
     <string name="dialog_content">这里可以输入一些内容</string>
     <string name="dialog_placeholder">请输入文本</string>
     <string name="dialog_invalid">输入不合法</string>
-    <string name="dialog_notice">这是一个提示，如果你想给用户一个提示或者警示，可以使用这个</string>
+    <string name="dialog_notice">这是一个提示，如果你想给用户一个提示或者警示，可以使用这个。</string>
     <string name="ok">好的</string>
     <string name="cancel">取消</string>
-    <string name="neutral">中间</string>
     <string name="confirm">确定</string>
+    <string name="dialog_title">温馨提示</string>
+    <string name="neutral">更多</string>
 </resources>

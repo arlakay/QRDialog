@@ -12,11 +12,12 @@ import org.json.JSONException;
  * Created by wenzhiquan on 17-11-8.
  */
 
-public class MaterialDesignNotice extends QRTextDialog {
+public class MaterialDesignNoticeWithTitle extends QRTextDialog {
     @Override
     public void initComponents(Bundle savedInstanceState) {
         super.initComponents(savedInstanceState);
         try {
+            paramsJson.put(TAG_TITLE, R.string.dialog_title);
             paramsJson.put(TAG_LABEL, R.string.dialog_notice);
             paramsJson.put(TAG_POSITIVE_BUTTON, R.string.ok);
             paramsJson.put(TAG_POSITIVE_BUTTON_COLOR, getResolvedColor(R.color.dialogBlue));

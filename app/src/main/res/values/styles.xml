@@ -15,8 +15,8 @@
     </style>
 
     <style name="BlueButtonAlertDialog" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
-        <item name="android:colorPrimary">@color/dialog_blue</item>
-        <item name="android:colorAccent">@color/dialog_blue</item>
+        <item name="android:colorPrimary">@color/dialogBlue</item>
+        <item name="android:colorAccent">@color/dialogBlue</item>
     </style>
 
 </resources>

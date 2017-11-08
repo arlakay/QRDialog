@@ -36,13 +36,10 @@ public class DialogAdapter extends RecyclerView.Adapter<DialogAdapter.DialogView
     public DialogViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dialog_item, parent, false);
         final DialogViewHolder viewHolder = new DialogViewHolder(view);
-        viewHolder.dialogView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int position = viewHolder.getAdapterPosition();
-                MyDialog myDialog = myDialogList.get(position);
-                myDialog.showDialog();
-            }
+        viewHolder.dialogView.setOnClickListener(tmpView -> {
+            int position = viewHolder.getAdapterPosition();
+            MyDialog myDialog = myDialogList.get(position);
+            myDialog.showDialog();
         });
         return viewHolder;
     }
